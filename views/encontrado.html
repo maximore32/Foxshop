@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">   
+    <title>{{titulo}}</title>
+</head>
+<body>
+    <div id="contenedor">
+        {% include "header.html" %}
+        {% include "navegacion.html" %}
+        <main >
+            {%for i in nombres%}
+            <div id="producto">                
+                <img class="imgp" src="{{i.imagen}}" alt="producto">
+                <h1><a href="/producto/{{i.id}}">{{i.id}}-{{i.producto}}</a></h1>                               
+            </div>
+            {%endfor%} 
+            
+        </main>
+        {% include "footer.html" %}
+         
+    </div>
+    
+</body>
+</html>
