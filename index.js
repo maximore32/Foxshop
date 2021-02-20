@@ -35,11 +35,6 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/home.html");
-});
-
-
 
 app.post("/resultado", (req, res) => {    
     console.log(req.body)
