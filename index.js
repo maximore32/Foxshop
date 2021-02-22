@@ -2,13 +2,23 @@ const express = require("express");
 const fetch = require('node-fetch');
 const nunjucks = require('nunjucks');
 
+const path = require('path')
+app.use('/public', express.static(path.join(__dirname + '/public')));
+
+
 var app = express();
 app.use(express.static('public'));
 
-nunjucks.configure('views', {
+nunjucks.configure(path.join(__dirname + '/views/'), {
+    autoescape: false,
+    express: app
+    });
+
+
+/*/nunjucks.configure('views', {
     autoescape: true,
     express: app
-});
+});*/
 
 app.get('/', function(req, res) {    
     fetch(`https://raw.githubusercontent.com/maximore32/JSON/master/Productos/productos.json`)
