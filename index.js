@@ -6,8 +6,8 @@ const path = require('path')
 app.use('/public', express.static(path.join(__dirname + '/public')));
 
 
-var app = express();
-app.use(express.static('public'));
+/*var app = express();
+app.use(express.static('public'));*/
 
 nunjucks.configure(path.join(__dirname + '/views/'), {
     autoescape: false,
