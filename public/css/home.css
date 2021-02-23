@@ -36,12 +36,12 @@ body{
     width: 100%;
     padding: 0%;
     height: auto;
+    
 }
 ul li{
     font-size: 25px;
     color: darkblue;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
-    
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;   
 }
 #imagen{
     width: 40%;
@@ -169,6 +169,11 @@ main{
         margin-left: 30px;
         height: 100px;
                    
+    }
+    h1{
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: darkgrey;
     }
     
 }
