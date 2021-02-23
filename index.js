@@ -1,11 +1,21 @@
 const express = require("express");
+var app = express();
+
+const port = process.env.PORT || 8080;
+
 const fetch = require('node-fetch');
 const nunjucks = require('nunjucks');
 
-var app = express();
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static('public'));
 
+
 nunjucks.configure('views', {
+
     autoescape: true,
     express: app
 })
@@ -31,9 +41,6 @@ app.get('/producto/:id', function(req, res){
         res.render('productos.html',{prod:datos[max]})
     })
 })
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.post("/resultado", (req, res) => {    
@@ -47,6 +54,4 @@ app.post("/resultado", (req, res) => {
 });
 
 
-
-
-app.listen(8080);
+app.listen(port);
