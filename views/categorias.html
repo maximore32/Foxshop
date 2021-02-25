@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/categoria.css">
+    <title>{{titulo}}</title>
+</head>
+<body>
+    <div id="contenedor">        
+        {% include "header.html" %}        
+        {% include "navegacion.html" %}        
+        <main id="ruta">
+            {%for i in cate%}
+            <h1>Categoria:{{i.categoria}}</h1>            
+            {%endfor%}                    
+        </main>
+        {% include "footer.html" %}
+    </div>
+
+</body>
+</html>

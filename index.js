@@ -42,6 +42,14 @@ app.get('/producto/:id', function(req, res){
     })
 })
 
+app.get('/category/:categoria', function(req, res){
+    fetch(`https://raw.githubusercontent.com/maximore32/JSON/master/Productos/productos.json`)
+    .then(response => response.json())
+    .then(datos => {
+        const cate = datos.filter(dato => dato.categoria)
+        res.render('categorias.html',{cate:datos})
+    })
+})
 
 app.post("/resultado", (req, res) => {    
     console.log(req.body)
