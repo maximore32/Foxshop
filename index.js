@@ -46,8 +46,12 @@ app.get('/category/:categoria', function(req, res){
     fetch(`https://raw.githubusercontent.com/maximore32/JSON/master/Productos/productos.json`)
     .then(response => response.json())
     .then(datos => {
-        const cate = datos.filter(dato => dato.categoria)
-        res.render('categorias.html',{cate:datos})
+        var identificador=[]
+        for(dato of datos){
+            identificador.push(dato.id)
+        }
+        var max = identificador.filter(x => x.req.params.categoria)         
+        res.render('categorias.html',{cat:max[x]})
     })
 })
 
