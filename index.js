@@ -65,5 +65,4 @@ app.post("/resultado", (req, res) => {
 	}
 });
 
-
 app.listen(port);
